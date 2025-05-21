@@ -76,6 +76,6 @@ A default admin user is created on application startup:
 - CSRF protection
 - CORS configuration
 
+---
 ## License
-
-This project is licensed under the MIT License.
+© 2025 AutoPrint. All rights reserved.
