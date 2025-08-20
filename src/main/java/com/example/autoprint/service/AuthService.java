@@ -29,10 +29,7 @@ public class AuthService {
     public AuthResponse authenticate(LoginRequest request) {
         log.info("Starting authentication for: {}", request.getUsername());
         try {
-            log.debug("Loading user details for: {}", request.getUsername());
             var userDetails = userDetailsService.loadUserByUsername(request.getUsername());
-            log.debug("User details loaded successfully for: {}", request.getUsername());
-            
             log.debug("Verifying password for user: {}", request.getUsername());
             if (!passwordEncoder.matches(request.getPassword(), userDetails.getPassword())) {
                 log.warn("Password verification failed for: {}", request.getUsername());
