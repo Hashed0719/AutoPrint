@@ -11,7 +11,9 @@ import java.util.Optional;
 @Repository
 public interface OrderRepository extends JpaRepository<PrintOrder, Long> {
     List<PrintOrder> findByUserAndStatus(User user, PrintOrder.OrderStatus status);
+    List<PrintOrder> findByUserIdOrderByCreatedAtDesc(Long userId);
     Optional<PrintOrder> findByOrderNumber(String orderNumber);
     Optional<PrintOrder> findByRazorpayOrderId(String razorpayOrderId);
     Optional<PrintOrder> findByIdAndUserId(Long id, Long userId);
+    List<PrintOrder> findByUserUsernameOrderByCreatedAtDesc(String username);
 }

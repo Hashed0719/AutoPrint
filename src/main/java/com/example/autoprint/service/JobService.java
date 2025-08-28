@@ -24,4 +24,12 @@ public class JobService {
                 .map(user -> orderRepository.findByUserAndStatus(user, PrintOrder.OrderStatus.PENDING_PAYMENT))
                 .orElse(Collections.emptyList());
     }
+    
+    public List<PrintOrder> getOrdersByUserId(Long userId) {
+        return orderRepository.findByUserIdOrderByCreatedAtDesc(userId);
+    }
+
+    public List<PrintOrder> getOrdersByUsername(String username) {
+        return orderRepository.findByUserUsernameOrderByCreatedAtDesc(username);
+    }
 }
