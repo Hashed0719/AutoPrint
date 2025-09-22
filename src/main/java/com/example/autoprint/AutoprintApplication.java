@@ -8,8 +8,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EnableJpaRepositories("com.example.autoprint.repository")
-@EntityScan("com.example.autoprint.model")
 @EnableTransactionManagement
 public class AutoprintApplication {
 
