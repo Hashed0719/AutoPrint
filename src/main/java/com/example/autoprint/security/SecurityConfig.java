@@ -52,7 +52,7 @@ public class SecurityConfig {
             "Access-Control-Allow-Methods", "Access-Control-Allow-Origin",
             "Access-Control-Allow-Headers", "Access-Control-Allow-Credentials"
         ));
-        
+
         // Expose necessary headers
         configuration.setExposedHeaders(Arrays.asList(
             "Authorization", "Content-Type", "X-Requested-With", "Accept", "Origin",
@@ -81,7 +81,8 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/api/auth/**", 
                     "/h2-console/**",
-                    "/error"
+                    "/error",
+                    "/ws-endpoint/**"
                 ).permitAll()
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().authenticated()
